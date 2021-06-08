@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SimpleButton from './SimpleButton';
+import { Col } from 'react-bootstrap';
 
 function ButtonGroup(props) {
     const [selected, setSelected] = useState(undefined);
@@ -9,9 +10,9 @@ function ButtonGroup(props) {
     return (
         <>
         {props.names.map(
-            (nam, index) => <SimpleButton name={nam} key={index} index={index}
+            (nam, index) => <Col md='auto' key={index}><SimpleButton name={nam} index={index}
             selected={index === selected} choose={chooseButton}>
-            </SimpleButton>)}
+            </SimpleButton></Col>)}
         </>
     );
 };
